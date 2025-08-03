@@ -1,3 +1,4 @@
+#can further integrate, this file is not used anywhere, the deepfake feature is an ongoing process
 # preprocess.py
 import cv2
 import os
@@ -46,8 +47,6 @@ def extract_faces_from_video(video_path, output_folder):
 
     cap.release()
     print(f"✅ Finished processing {video_path}")
-
-# --- Main Execution ---
 
 # 1. Extract faces from all videos
 print("--- Starting Face Extraction ---")

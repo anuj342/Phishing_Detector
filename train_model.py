@@ -10,15 +10,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, accuracy_score
 
-# --- (You only need to run the downloads once) ---
+# error will mostly occur, in that case uncomment the below 2 line (download just once)
 # nltk.download('stopwords')
 # nltk.download('wordnet')
-# --------------------------------------------------
 
-# === STEP 1: LOAD DATA ===
+# load data
 print("Step 1: Loading data...")
 try:
-    # Ensure your CSV has columns named exactly 'body' and 'label' (or update the code below)
+    # Make sure your dataset has exact label as 'body' and 'label'
     df = pd.read_csv('datasets/phishing.csv')
 except FileNotFoundError:
     print("Error: 'datasets/phishing.csv' not found. Please check the filename and location.")
@@ -29,14 +28,10 @@ print(df.head())
 print("-" * 30)
 
 
-# === STEP 2: PREPROCESS DATA ===
+# Preprocess data (important)
 print("Step 2: Preprocessing data...")
-# CRITICAL: These column names must match your CSV headers exactly.
 df.dropna(subset=['body', 'label'], inplace=True)
 
-# --- CORRECTED LABEL STANDARDIZATION ---
-# This is a more robust way to handle labels that are likely already 0 or 1.
-# It converts the 'label' column to a numeric type.
 df['label'] = pd.to_numeric(df['label'], errors='coerce')
 df.dropna(subset=['label'], inplace=True) # Drop rows where conversion failed
 df['label'] = df['label'].astype(int)
@@ -49,7 +44,7 @@ print(df['label'].value_counts())
 print("-" * 30)
 
 
-# === STEP 3: CLEAN TEXT ===
+# Cleaning the data before use
 print("Step 3: Cleaning email text...")
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
@@ -69,7 +64,7 @@ print("Data cleaning complete.")
 print("-" * 30)
 
 
-# === STEP 4: FEATURE ENGINEERING ===
+# Feature engineering
 print("Step 4: Performing feature engineering...")
 suspicious_keywords = ['verify', 'account', 'password', 'urgent', 'suspend', 'confirm', 'login', 'secure']
 
@@ -99,7 +94,7 @@ print("Shape of final features (X):", X.shape)
 print("-" * 30)
 
 
-# === STEP 5: MODEL TRAINING ===
+# Training model
 print("Step 5: Splitting data and training the model...")
 # Check if there's more than one class before stratifying
 if len(y.unique()) > 1:
@@ -116,7 +111,7 @@ print("Model training complete.")
 print("-" * 30)
 
 
-# === STEP 6: MODEL EVALUATION & SAVING ===
+# Checking the accuracy
 print("Step 6: Evaluating and saving the model...")
 y_pred = rf_classifier.predict(X_test)
 

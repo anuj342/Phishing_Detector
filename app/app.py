@@ -7,22 +7,22 @@ from flask import Flask, request, jsonify, render_template
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-# --- Initial Setup ---
+# initial setup
 app = Flask(__name__)
 
 # Define paths to the saved phishing model and vectorizer
 PHISHING_MODEL_PATH = '../models/phishing_detector_model.joblib'
 VECTORIZER_PATH = '../models/tfidf_vectorizer.joblib'
 
-# --- Load Model at Startup ---
+#Load Model at Startup 
 print("Loading phishing model, please wait...")
 phishing_model = joblib.load(PHISHING_MODEL_PATH)
 tfidf_vectorizer = joblib.load(VECTORIZER_PATH)
 print("Model loaded successfully!")
 
-# --- Phishing Prediction Logic ---
+#Phishing Prediction Logic
 
-# Re-create the text cleaning function from Phase 1
+#data cleaning
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 
@@ -52,10 +52,10 @@ def predict_phishing(email_body):
     if not email_body or not isinstance(email_body, str):
         return {"error": "Invalid input: Email content is missing or not text."}
 
-    # 1. Clean the text
+    # Clean the text
     cleaned_body = clean_text(email_body)
 
-    # 2. Feature Engineering
+    # Feature Engineering
     keyword_count = count_suspicious_keywords(cleaned_body)
     has_ip = has_ip_in_url(email_body) # Check original body for URLs
     
@@ -66,7 +66,7 @@ def predict_phishing(email_body):
     numerical_features = np.array([[keyword_count, has_ip]])
     all_features = np.hstack([numerical_features, text_features])
 
-    # 3. Make Prediction
+    # Make Prediction
     prediction = phishing_model.predict(all_features)
     probability = phishing_model.predict_proba(all_features)
 
@@ -78,7 +78,7 @@ def predict_phishing(email_body):
         "confidence": f"{confidence:.2%}"
     }
 
-# --- Flask API Endpoints ---
+#API Endpoints
 
 @app.route('/')
 def home():
@@ -99,6 +99,6 @@ def predict():
         print(f"An error occurred: {e}")
         return jsonify({"error": "An internal server error occurred."}), 500
 
-# --- Run the App ---
+#Run the App
 if __name__ == '__main__':
     app.run(debug=True)

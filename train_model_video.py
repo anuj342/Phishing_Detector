@@ -6,22 +6,21 @@ from tensorflow.keras.utils import image_dataset_from_directory
 from efficientnet.tfkeras import EfficientNetB0
 import os
 
-# --- Configuration ---
 IMG_SIZE = (128, 128)
 BATCH_SIZE = 32
 EPOCHS = 10
-NUM_CLASSES = 1 # Binary classification (real=0, fake=1)
+NUM_CLASSES = 1 # (real=0, fake=1)
 DATA_DIR = 'datasets/faces/'
 MODEL_SAVE_PATH = 'models/deepfake_detector_model.keras'
 
-# --- 1. Build the Model ---
+# build the model
 def build_model():
     base_model = EfficientNetB0(
         include_top=False,
         weights='imagenet',
         input_shape=(*IMG_SIZE, 3)
     )
-    base_model.trainable = False  # Freeze base layers
+    base_model.trainable = False 
 
     x = base_model.output
     x = GlobalAveragePooling2D()(x)
@@ -36,7 +35,7 @@ model = build_model()
 model.summary()
 
 
-# --- 2. Create Data Generators ---
+# create data generators
 print("\n--- Loading Datasets ---")
 train_dataset = image_dataset_from_directory(
     DATA_DIR,
@@ -62,7 +61,7 @@ validation_dataset = image_dataset_from_directory(
 print("Class Names:", train_dataset.class_names)
 
 
-# --- 3. Compile and Train the Model ---
+# compile and train the model
 print("\n--- Compiling Model ---")
 model.compile(
     optimizer='adam',
@@ -78,7 +77,7 @@ history = model.fit(
 )
 
 
-# --- 4. Evaluate and Save ---
+# Check results and accuracy
 print("\n--- Evaluating Model ---")
 # Create a separate test set from the validation data for a final check
 val_batches = tf.data.experimental.cardinality(validation_dataset)
