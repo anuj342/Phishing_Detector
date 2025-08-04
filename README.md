@@ -1,25 +1,6 @@
 # AI-Powered Phishing Email Detector
 A web application that uses a machine learning model and Natural Language Processing (NLP) to analyze raw email text and classify it as either legitimate or a phishing attempt in real-time.
 
-## Table of Contents
-Problem Statement
-
-Features
-
-Tech Stack
-
-How It Works
-
-Setup and Installation
-
-Usage
-
-Project Structure
-
-Future Improvements
-
-License
-
 ## Problem Statement
 Phishing is one of the most pervasive and damaging cyber threats, responsible for data breaches, financial loss, and credential theft. Traditional email filters are effective but not foolproof, and attackers are constantly evolving their techniques. This project provides an accessible tool for users to get an instant second opinion on a suspicious email, empowering them to make safer decisions.
 
@@ -153,3 +134,4 @@ Advanced Models: Experiment with more advanced deep learning models like LSTMs o
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
