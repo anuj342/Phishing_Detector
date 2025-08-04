@@ -4,9 +4,9 @@ A web application that uses a machine learning model and Natural Language Proces
 ## Problem Statement
 Phishing is one of the most pervasive and damaging cyber threats, responsible for data breaches, financial loss, and credential theft. Traditional email filters are effective but not foolproof, and attackers are constantly evolving their techniques. This project provides an accessible tool for users to get an instant second opinion on a suspicious email, empowering them to make safer decisions.
 
-<img width="1920" height="1080" alt="Screenshot (83)" src="https://github.com/user-attachments/assets/8328b05b-b73f-4976-befb-9d242acef359" />
+<img width="1920" height="954" alt="Screenshot (83)" src="https://github.com/user-attachments/assets/21bb7c43-a037-4e58-8493-cb25bdad4a1c" />
 
-<img width="1920" height="1080" alt="Screenshot (84)" src="https://github.com/user-attachments/assets/ce46591e-3ecf-4cb9-94fd-fb6d01e801c9" />
+<img width="1920" height="958" alt="Screenshot (84)" src="https://github.com/user-attachments/assets/c7268f3a-4481-406b-ae24-7ab26afc59e3" />
 
 ## Features
 Real-Time Analysis: Instantly classifies email content pasted into the web interface.
@@ -130,6 +130,7 @@ Advanced Models: Experiment with more advanced deep learning models like LSTMs o
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 
 
