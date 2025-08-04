@@ -55,24 +55,33 @@ Clone the Repository
 Bash
 
 git clone [https://github.com/anuj342/phishing-detector.git](https://github.com/anuj342/Phishing_Detector.git)
+
 cd phishing-detector
+
 Create and Activate a Virtual Environment
 
 Bash
 
 ## For macOS/Linux
+
 python3 -m venv venv
+
 source venv/bin/activate
 
 ## For Windows
+
 python -m venv venv
+
 venv\Scripts\activate
+
 Install Dependencies
+
 First, ensure you have a requirements.txt file. You can create one by running:
 
 Bash
 
 pip freeze > requirements.txt
+
 Then, install all required packages:
 
 Bash
@@ -105,23 +114,6 @@ Click the "Analyze Email" button.
 
 The prediction and confidence score will appear below the button.
 
-## Project Structure
-phishing-detector/
-├── app/
-│   ├── static/
-│   │   ├── style.css
-│   │   └── script.js
-│   ├── templates/
-│   │   └── index.html
-│   └── app.py              
-├── assets/
-│   └── screenshot.png
-├── models/
-│   ├── phishing_model.joblib # The trained ML model
-│   └── tfidf_vectorizer.joblib # The saved TF-IDF vectorizer
-├── .gitignore
-├── README.md
-└── requirements.txt
 ## Future Improvements
 Threat Intelligence Integration: Integrate with APIs from services like VirusTotal or PhishTank to check the reputation of URLs found in emails in real-time.
 
@@ -134,6 +126,7 @@ Advanced Models: Experiment with more advanced deep learning models like LSTMs o
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 
 
