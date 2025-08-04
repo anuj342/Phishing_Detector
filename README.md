@@ -109,13 +109,13 @@ The prediction and confidence score will appear below the button.
 phishing-detector/
 ├── app/
 │   ├── static/
-│   │   ├── style.css       # CSS for styling
-│   │   └── script.js       # JavaScript for frontend logic
+│   │   ├── style.css
+│   │   └── script.js
 │   ├── templates/
-│   │   └── index.html      # Main HTML page
-│   └── app.py              # Flask application
+│   │   └── index.html
+│   └── app.py              
 ├── assets/
-│   └── screenshot.png      # Screenshot of the application
+│   └── screenshot.png
 ├── models/
 │   ├── phishing_model.joblib # The trained ML model
 │   └── tfidf_vectorizer.joblib # The saved TF-IDF vectorizer
@@ -134,6 +134,7 @@ Advanced Models: Experiment with more advanced deep learning models like LSTMs o
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 
 
