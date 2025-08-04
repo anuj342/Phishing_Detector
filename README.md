@@ -54,7 +54,7 @@ Clone the Repository
 
 Bash
 
-git clone https://github.com/anuj342/phishing-detector.git
+git clone [https://github.com/anuj342/phishing-detector.git](https://github.com/anuj342/Phishing_Detector.git)
 cd phishing-detector
 Create and Activate a Virtual Environment
 
@@ -134,5 +134,6 @@ Advanced Models: Experiment with more advanced deep learning models like LSTMs o
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 
