@@ -1,9 +1,7 @@
-🤖 AI-Powered Phishing Email Detector
+# AI-Powered Phishing Email Detector
 A web application that uses a machine learning model and Natural Language Processing (NLP) to analyze raw email text and classify it as either legitimate or a phishing attempt in real-time.
 
-(Note: You should replace this with an actual screenshot of your running application. Create an assets folder in your project's root directory and save the image there.)
-
-📖 Table of Contents
+## Table of Contents
 Problem Statement
 
 Features
@@ -22,10 +20,10 @@ Future Improvements
 
 License
 
-🎯 Problem Statement
+## Problem Statement
 Phishing is one of the most pervasive and damaging cyber threats, responsible for data breaches, financial loss, and credential theft. Traditional email filters are effective but not foolproof, and attackers are constantly evolving their techniques. This project provides an accessible tool for users to get an instant second opinion on a suspicious email, empowering them to make safer decisions.
 
-✨ Features
+## Features
 Real-Time Analysis: Instantly classifies email content pasted into the web interface.
 
 Confidence Scoring: Provides a probability score to indicate the model's confidence in its prediction.
@@ -36,7 +34,7 @@ Simple & Intuitive UI: A clean and straightforward user interface built with HTM
 
 RESTful API: A backend built with Flask that serves the machine learning model.
 
-🛠️ Tech Stack
+## Tech Stack
 Backend: Python, Flask
 
 Machine Learning: Scikit-learn, Pandas, NumPy
@@ -45,7 +43,7 @@ NLP: NLTK (Natural Language Toolkit)
 
 Frontend: HTML5, CSS3, JavaScript (Fetch API)
 
-⚙️ How It Works
+## How It Works
 The application follows a simple but powerful workflow to analyze email content:
 
 User Input: The user pastes the full raw content of an email into the text area on the web page.
@@ -68,7 +66,7 @@ API Response: The model returns a prediction ("Phishing" or "Legitimate") and a 
 
 Display Result: The frontend JavaScript parses the JSON response and dynamically updates the UI to display the final verdict to the user.
 
-🚀 Setup and Installation
+## Setup and Installation
 To run this project locally, please follow these steps:
 
 Clone the Repository
@@ -81,11 +79,11 @@ Create and Activate a Virtual Environment
 
 Bash
 
-# For macOS/Linux
+## For macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
 
-# For Windows
+## For Windows
 python -m venv venv
 venv\Scripts\activate
 Install Dependencies
@@ -115,7 +113,7 @@ cd app
 python app.py
 The application will be available at http://127.0.0.1:5000.
 
-👨‍💻 Usage
+## Usage
 Open your web browser and navigate to http://127.0.0.1:5000.
 
 Copy the full content of an email you wish to analyze.
@@ -126,7 +124,7 @@ Click the "Analyze Email" button.
 
 The prediction and confidence score will appear below the button.
 
-📁 Project Structure
+## Project Structure
 phishing-detector/
 ├── app/
 │   ├── static/
@@ -143,7 +141,7 @@ phishing-detector/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-🔮 Future Improvements
+## Future Improvements
 Threat Intelligence Integration: Integrate with APIs from services like VirusTotal or PhishTank to check the reputation of URLs found in emails in real-time.
 
 Containerization: Package the application using Docker for easier deployment and scalability.
@@ -152,5 +150,6 @@ Build a Browser Extension: Create a browser extension (e.g., for Chrome/Firefox)
 
 Advanced Models: Experiment with more advanced deep learning models like LSTMs or Transformers (e.g., BERT) for text classification to potentially improve accuracy.
 
-📄 License
+## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
