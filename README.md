@@ -127,9 +127,8 @@ Build a Browser Extension: Create a browser extension (e.g., for Chrome/Firefox)
 
 Advanced Models: Experiment with more advanced deep learning models like LSTMs or Transformers (e.g., BERT) for text classification to potentially improve accuracy.
 
-## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 
 
