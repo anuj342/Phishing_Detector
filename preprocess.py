@@ -46,7 +46,7 @@ def extract_faces_from_video(video_path, output_folder):
         frame_count += 1
 
     cap.release()
-    print(f"✅ Finished processing {video_path}")
+    print(f"Finished processing {video_path}")
 
 # 1. Extract faces from all videos
 print("--- Starting Face Extraction ---")
